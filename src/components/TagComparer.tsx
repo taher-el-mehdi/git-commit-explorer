@@ -57,17 +57,21 @@ export const TagComparer: React.FC = () => {
   useEffect(() => {
     if (!selectedBaseTag || !selectedHeadTag) return
     
+    // Capture the values to preserve type narrowing
+    const baseTag = selectedBaseTag
+    const headTag = selectedHeadTag
+    
     let cancelled = false
     async function compare() {
       setComparing(true)
       setError(undefined)
       try {
         const cfg: GitHubConfig = { owner: repo.owner, repo: repo.repo, token: repo.token }
-        const result = await compareTags(cfg, selectedBaseTag, selectedHeadTag)
+        const result = await compareTags(cfg, baseTag, headTag)
         if (!cancelled) {
           setTagComparison({
-            baseTag: selectedBaseTag,
-            headTag: selectedHeadTag,
+            baseTag: baseTag,
+            headTag: headTag,
             comparison: result,
           })
         }
