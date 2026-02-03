@@ -6,7 +6,7 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig(({ mode }) => ({
   // For GitHub Pages project sites, set base to '/<REPO_NAME>/'
   // You can override via env var VITE_BASE at build time.
-  base: process.env.VITE_BASE || '/msdyn365bc-code-history-manager/',
+  base: process.env.VITE_BASE || '/git-commit-explorer/',
   plugins: [react()],
   resolve: {
     alias: {

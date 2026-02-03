@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /msdyn365bc-code-history-manager/
+          VITE_BASE: /git-commit-explorer/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
